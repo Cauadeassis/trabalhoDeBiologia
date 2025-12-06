@@ -1,16 +1,9 @@
-:root {
-    --bg-1: linear-gradient(135deg, #e6f0ff 0%, #f9faff 40%, #eaf7f1 100%);
-    --glass-bg: rgba(255, 255, 255, 0.10);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --accent: rgba(80, 140, 255, 0.95);
-    --muted: rgba(255, 255, 255, 0.85);
-    --shadow: 0 8px 30px rgba(12, 18, 28, 0.15);
-    --radius: 18px;
-    --max-width: 1200px;
-}
-
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    text-decoration: none;
 }
 
 html,
@@ -26,4 +19,24 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.45;
+}
+
+#introduction {
+    grid-area: intro;
+}
+
+#types {
+    grid-area: types;
+}
+
+#functions {
+    grid-area: functions;
+}
+
+#glandular {
+    grid-area: glandular;
+}
+
+#aside {
+    grid-area: aside;
 }
