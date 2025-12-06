@@ -26,6 +26,10 @@ body {
     grid-area: intro;
 }
 
+#aside {
+    grid-area: aside;
+}
+
 #types {
     grid-area: types;
 }
@@ -36,8 +40,4 @@ body {
 
 #glandular {
     grid-area: glandular;
-}
-
-#aside {
-    grid-area: aside;
 }

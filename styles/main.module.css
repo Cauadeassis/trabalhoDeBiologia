@@ -54,10 +54,10 @@
     .main {
         grid-template-columns: 1fr;
         grid-template-areas:
-            "1"
+            "intro"
             "aside"
-            "2"
-            "3"
-            "4"
+            "types"
+            "functions"
+            "glandular"
     }
 }
