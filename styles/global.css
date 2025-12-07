@@ -26,14 +26,18 @@ body {
     grid-area: aside;
 }
 
-#types {
-    grid-area: types;
+#characteristics {
+    grid-area: characteristics;
 }
 
 #functions {
     grid-area: functions;
 }
 
-#glandular {
-    grid-area: glandular;
+#types {
+    grid-area: types;
+}
+
+#especializations {
+    grid-area: especializations;
 }

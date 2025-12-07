@@ -17,8 +17,8 @@
     grid-template-columns: 2fr 2fr 1fr;
     grid-template-areas:
         "intro intro aside"
-        "types functions aside"
-        "glandular glandular aside";
+        "characteristics functions aside"
+        "types especializations glandular";
 }
 
 .section {
@@ -76,9 +76,10 @@
         grid-template-areas:
             "intro"
             "aside"
-            "types"
+            "characteristics"
             "functions"
-            "glandular";
+            "types"
+            "especializations";
         padding: 24px 16px;
     }
 

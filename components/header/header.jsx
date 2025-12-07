@@ -7,9 +7,10 @@ export default function Header() {
             <h1 className={sharedStyles.mainTitle}>Tecido Epitelial</h1>
             <nav className={sharedStyles.list}>
                 <a href="#introduction" >Introdução</a>
-                <a href="#types" >Tipos</a>
+                <a href="#characteristics" >Características</a>
                 <a href="#functions"> Funções</a>
-                <a href="#glandular" >Glandular</a>
+                <a href="#types" >Tipos</a>
+                <a href="#especializations" >Especializações</a>
                 <a href="#quiz" >Quiz</a>
             </nav>
         </div>

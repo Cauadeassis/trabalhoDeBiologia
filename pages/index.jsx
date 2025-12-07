@@ -1,58 +1,79 @@
+import { useRouter } from "next/router";
+import Head from "next/head";
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
-import Head from "next/head";
+import { cards } from "../lib/cards.js";
 import styles from "../styles/main.module.css";
 
 export default function Page() {
+    const router = useRouter();
+    const handleCardClick = (cardTitle) => {
+        const selectedCard = cards.find(card => card.title === cardTitle);
+        if (selectedCard) {
+            localStorage.setItem("card", JSON.stringify(selectedCard));
+            router.push("/secondaryPage/secondaryPage");
+        }
+    };
     return (
         <div className={styles.body}>
             <Head>
                 <title>Tecido Epitelial</title>
+                <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <Header />
             <main className={styles.main}>
                 <section id="introduction" className={styles.section}>
-                    <h2>O que é Tecido Epitelial?</h2>
-                    <p>Reveste as superfícies e forma glândulas.</p>
+                    <h2>O que é o tecido epitelial?</h2>
+                    <p>É o tecido que reveste superfícies do corpo, como a pele, órgãos internos e forma glândulas.</p>
                 </section>
                 <aside id="aside" className={styles.section}>
-                    <h2>Características</h2>
-                    <ul className="bullet-list">
-                        <li>Justaposição</li>
-                        <li>Avascular</li>
-                        <li>Regeneração rápida</li>
-                        <li>Polaridade</li>
+                    <h2>Onde é encontrado?</h2>
+                    <ul>
+                        <li>Pele;</li>
+                        <li>Superfície de órgãos;</li>
+                        <li>Vias respiratórias;</li>
+                        <li>Trato digestório;</li>
+                        <li>Bexiga;</li>
+                        <li>Glândulas</li>
                     </ul>
                 </aside>
-                <section id="types" className={styles.section}>
-                    <h2>Tipos</h2>
-                    <div>
-                        <ul>
-                            <li>Justaposição</li>
-                            <li>Avascular</li>
-                            <li>Regeneração rápida</li>
-                            <li>Polaridade</li>
-                        </ul>
-                    </div>
+                <section id="characteristics" className={styles.section}>
+                    <h2>Características</h2>
+                    <ul>
+                        <li onClick={() => handleCardClick("Justaposição")}>Justaposição</li>
+                        <li onClick={() => handleCardClick("Avascularização")}>Avascular</li>
+                        <li onClick={() => handleCardClick("Regeneração rápida")}>Regeneração rápida</li>
+                    </ul>
                 </section>
                 <section id="functions" className={styles.section}>
                     <h2>Funções</h2>
                     <ul>
-                        <li>Proteção</li>
-                        <li>Absorção</li>
-                        <li>Secreção</li>
-                        <li>Sensibilidade</li>
+                        <li onClick={() => handleCardClick("Proteção")}>Proteção</li>
+                        <li onClick={() => handleCardClick("Absorção")}>Absorção</li>
+                        <li onClick={() => handleCardClick("Secreção")}>Secreção</li>
+                        <li onClick={() => handleCardClick("Excreção")}>Excreção</li>
+                        <li onClick={() => handleCardClick("Sensibilidade")}>Sensibilidade</li>
+                        <li onClick={() => handleCardClick("Transporte")}>Transporte</li>
                     </ul>
                 </section>
-                <section id="glandular" className={styles.section}>
-                    <h2>Tecido Glandular</h2>
+                <section id="types" className={styles.section}>
+                    <h2>Tipos</h2>
                     <ul>
-                        <li>Endócrino</li>
-                        <li>Exócrino</li>
+                        <li onClick={() => handleCardClick("Epitélio de revestimento")}>Epitélio de revestimento</li>
+                        <li onClick={() => handleCardClick("Epitélio glandular")}>Epitélio Glandular</li>
+                    </ul>
+                </section>
+                <section id="especializations" className={styles.section}>
+                    <h2>Especializações</h2>
+                    <ul>
+                        <li onClick={() => handleCardClick("Microvilosidades")}>Microvilosidades</li>
+                        <li onClick={() => handleCardClick("Cílios")}>Cílios</li>
+                        <li onClick={() => handleCardClick("Desmossomos")}>Desmossomos</li>
                     </ul>
                 </section>
             </main>
             <Footer />
-        </div>
+        </div >
     );
 }

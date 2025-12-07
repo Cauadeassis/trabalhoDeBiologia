@@ -1,0 +1,123 @@
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
+    color: #1a202c;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+    & header {
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+}
+
+.mainTitle {
+    color: white;
+    transition: transform 0.3s ease;
+    display: inline-block;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    & h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.body main {
+    flex: 1;
+    width: min(700px, 90%);
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+}
+
+.titleContainer {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 25px 25px 0 0;
+    padding: 32px 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    & h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+.imageContainer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    & img {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.descriptionContainer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 25px 25px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    & p {
+        color: #4a5568;
+        line-height: 1.8;
+        font-size: 1.15rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .mainTitle h1 {
+        font-size: 2.5rem;
+    }
+
+    .titleContainer h2 {
+        font-size: 1.8rem;
+    }
+
+    .descriptionContainer p {
+        font-size: 1.05rem;
+    }
+
+    .body main {
+        padding: 24px 16px 40px;
+    }
+}
