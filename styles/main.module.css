@@ -2,8 +2,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #f6f7fb;
-    color: #13212b;
+    background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
+    color: #1a202c;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
@@ -11,9 +11,9 @@
     flex: 1;
     width: min(1100px, 100%);
     margin: 0 auto;
-    padding: 24px 16px 12px;
+    padding: 32px 20px;
     display: grid;
-    gap: 18px;
+    gap: 24px;
     grid-template-columns: 2fr 2fr 1fr;
     grid-template-areas:
         "intro intro aside"
@@ -21,34 +21,53 @@
         "glandular glandular aside";
 }
 
-.section,
-.aside {
-    background: #ffffff;
-    border: 1px solid rgba(19, 33, 43, 0.12);
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 10px 30px rgba(19, 33, 43, 0.06);
+.section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 48px rgba(31, 38, 135, 0.25);
+    }
+
+    & h2 {
+        margin: 0 0 16px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    & p {
+        color: #4a5568;
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    & ul {
+        margin: 12px 0 0;
+        padding-left: 20px;
+        color: #4a5568;
+        line-height: 1.8;
+
+        & li {
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #667eea;
+            }
+        }
+    }
 }
 
-.section h2,
-.aside h2 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-}
-
-.section p {
-    color: rgba(19, 33, 43, 0.86);
-}
-
-.section ul,
-.aside ul {
-    margin: 10px 0 0;
-    padding-left: 18px;
-}
-
-.aside {
-    position: relative;
-}
 
 @media (max-width: 860px) {
     .main {
@@ -58,6 +77,11 @@
             "aside"
             "types"
             "functions"
-            "glandular"
+            "glandular";
+        padding: 24px 16px;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
     }
 }

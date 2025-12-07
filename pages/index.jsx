@@ -1,7 +1,7 @@
-import styles from "../styles/main.module.css"
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
 import Head from "next/head";
+import styles from "../styles/main.module.css";
 
 export default function Page() {
     return (
@@ -15,7 +15,7 @@ export default function Page() {
                     <h2>O que é Tecido Epitelial?</h2>
                     <p>Reveste as superfícies e forma glândulas.</p>
                 </section>
-                <aside id="aside" className={styles.aside}>
+                <aside id="aside" className={styles.section}>
                     <h2>Características</h2>
                     <ul className="bullet-list">
                         <li>Justaposição</li>
@@ -25,7 +25,7 @@ export default function Page() {
                     </ul>
                 </aside>
                 <section id="types" className={styles.section}>
-                    <h2>Tipos de tecido epitelial</h2>
+                    <h2>Tipos</h2>
                     <div>
                         <ul>
                             <li>Justaposição</li>
