@@ -60,9 +60,11 @@
 
         & li {
             margin-bottom: 8px;
-            transition: color 0.2s ease;
+            transition: 0.2s;
 
             &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
                 color: #667eea;
             }
         }
