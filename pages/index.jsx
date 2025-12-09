@@ -30,12 +30,12 @@ export default function Page() {
                 <aside id="aside" className={styles.section}>
                     <h2>Onde é encontrado?</h2>
                     <ul>
-                        <li>Pele;</li>
-                        <li>Superfície de órgãos;</li>
-                        <li>Vias respiratórias;</li>
-                        <li>Trato digestório;</li>
-                        <li>Bexiga;</li>
-                        <li>Glândulas</li>
+                        <li onClick={() => handleCardClick("Pele")}>Pele;</li>
+                        <li onClick={() => handleCardClick("Superfície dos órgãos")}>Superfície de órgãos;</li>
+                        <li onClick={() => handleCardClick("Vias respiratórias")}>Vias respiratórias;</li>
+                        <li onClick={() => handleCardClick("Trato digestório")}>Trato digestório;</li>
+                        <li onClick={() => handleCardClick("Bexiga")}>Bexiga;</li>
+                        <li onClick={() => handleCardClick("Glândulas")}>Glândulas</li>
                     </ul>
                 </aside>
                 <section id="characteristics" className={styles.section}>
